@@ -1,20 +1,40 @@
----
-type: page
-title: About
-date: 2021-03-19
----
+import Link from 'next/link'
 
-# Your Name
+export const meta = {
+  title: 'Ibtisam — Software Engineer',
+  description: 'Building clean, modern digital experiences.'
+}
 
-Hey, I'm a Senior Software Engineer at Company. I enjoy working with Next.js and crafting beautiful front-end experiences.
+# Hi, I’m Ibtisam.
 
-This portfolio is built with **Next.js** and a library called [Nextra](https://nextra.vercel.app/). It allows you to write Markdown and focus on the _content_ of your portfolio.
+### Software Engineer & Digital Product Builder
 
-[**Deploy your own**](https://vercel.com/new/clone?demo-title=Portfolio+Starter+Kit&demo-description=Easily+create+a+portfolio+with+Next.js+and+Markdown.&demo-url=https%3A%2F%2Fdemo.vercel.blog%2F&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F2aC4eHLrOKmT4fnLfoNGK2%2F14b1e6bbe598ec023ffe85001d31e634%2FCleanShot_2022-04-11_at_23.12.01.png&project-name=Portfolio+Starter+Kit&repository-name=portfolio-starter-kit&repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnextjs-portfolio-starter&from=templates&skippable-integrations=1&teamCreateStatus=hidden) in a few minutes.
+I create modern, minimalistic, and human-centered digital experiences.  
+Blending engineering, design, and strategy into clean, impactful products.
 
----
+<div style={{ marginTop: "2rem", display: "flex", gap: "1rem" }}>
+  <Link href="/projects">
+    <button style={{
+      background: "black",
+      color: "white",
+      padding: "12px 24px",
+      borderRadius: "8px",
+      border: "none",
+      cursor: "pointer"
+    }}>
+      View Projects
+    </button>
+  </Link>
 
-- Twitter [@yourname](https://twitter.com/yourname)
-- GitHub [@yourname](https://github.com/yourname)
-- Instagram [@yourname](https://instagram.com/yourname)
-- Email your@name.com
+  <Link href="/about">
+    <button style={{
+      background: "white",
+      border: "1px solid #ccc",
+      padding: "12px 24px",
+      borderRadius: "8px",
+      cursor: "pointer"
+    }}>
+      About Me
+    </button>
+  </Link>
+</div>

@@ -1,7 +1,9 @@
 import 'nextra-theme-blog/style.css'
 import Head from 'next/head'
-
+import Navbar from '../components/navbar';
+import Hero from '../components/Hero';
 import '../styles/main.css'
+
 
 export default function Nextra({ Component, pageProps }) {
   return (
@@ -21,6 +23,8 @@ export default function Nextra({ Component, pageProps }) {
           crossOrigin="anonymous"
         />
       </Head>
+       <Navbar />
+       <Hero />
       <Component {...pageProps} />
     </>
   )
