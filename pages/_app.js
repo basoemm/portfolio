@@ -1,6 +1,6 @@
 import 'nextra-theme-blog/style.css'
 import Head from 'next/head'
-import Navbar from '../components/navbar';
+import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import '../styles/main.css'
 
