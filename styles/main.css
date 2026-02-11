@@ -1,9 +1,9 @@
 :root {
-  --cotton-field: #EFE9DE;   /* Soft cream background */
-  --silver-bird: #D8C8B7;    /* Warm sand – cards/sections */
-  --kilimanjaro: #4E4A46;    /* Deep stone – primary text */
-  --warrior: #8C857E;        /* Taupe grey – secondary text */
-  --semolina: #B6CFC7;       /* Aqua mist – accent */
+  --cotton-field: #f4efe8;   /* Main background */
+  --silver-bird: #faf7f2;    /* Card backgrounds */
+  --kilimanjaro: #3b342e;    /* Primary text */
+  --warrior: #7a685b;        /* Secondary text */
+  --semolina: #c8a68d;       /* Accent */
 }
 
 body {
@@ -13,6 +13,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 html, body {
   max-width: 100%;
   overflow-x: hidden;

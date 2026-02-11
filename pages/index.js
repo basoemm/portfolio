@@ -1,9 +1,5 @@
-import Hero from '../components/Hero'
+import LaptopHero from "../components/LaptopHero";
 
-export default function Home() {
-  return (
-    <>
-      <Hero />
-    </>
-  )
+export default function HomePage() {
+  return <LaptopHero />;
 }

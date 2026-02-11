@@ -1,0 +1,6 @@
+#!/Users/ibti/portfolio/big-data-dt-2425-group-1/dashboard/venv311/bin/python3.11
+import sys
+from fontTools.merge import main
+if __name__ == '__main__':
+    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+    sys.exit(main())

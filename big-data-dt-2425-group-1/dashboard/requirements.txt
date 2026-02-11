@@ -1,0 +1,17 @@
+# --- Core ---
+python-dotenv==1.0.*
+pandas==2.2.*
+numpy==1.26.*
+scikit-learn==1.5.*
+plotly==5.22.*
+streamlit==1.34.*
+xgboost==3.0.0
+matplotlib==3.8.4
+
+# --- Database ---
+SQLAlchemy==2.0.*
+pymysql==1.1.*
+mysql-connector-python==8.4.*
+
+# --- Misc (nice-to-have / logging) ---
+python-dateutil>=2.9

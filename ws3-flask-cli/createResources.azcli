@@ -1,0 +1,78 @@
+# https://docs.microsoft.com/en-us/azure/developer/python/walkthrough-
+tutorial-authentication-01
+az login
+AZURE_SUBSCRIPTION_NAME='Azure for Students'
+az account set --subscription $AZURE_SUBSCRIPTION_NAME
+az account show --query id --output tsv
+AZURE_SUBSCRIPTION_ID=$(az account show --query id --output tsv)
+echo $AZURE_SUBSCRIPTION_ID
+
+##########################################################
+## SET GLOBAL VARIABLES
+PREFIX=******* #$RANDOM
+AZURE_LOCATION=westeurope
+SCENARIO_RG=MyRg-$PREFIX
+
+MAIN_APP_NAME=$PREFIX-main-app
+THIRD_PARTY_API_APP_NAME=$PREFIX-third-party-api
+KEY_VAULT_NAME=key-vault-$PREFIX
+
+MAIN_APP_PLAN_NAME=$MAIN_APP_NAME-plan
+MAIN_APP_STORAGE_NAME=${MAIN_APP_NAME//-/}
+THIRD_PARTY_API_STORAGE_NAME=${THIRD_PARTY_API_APP_NAME//-/}
+
+THIRD_PARTY_API_SECRET_NAME=third-party-api-key
+THIRD_PARTY_API_SECRET_VALUE=d0c5atM1crs0ft # This will be the secret
+# to be used for the api
+STORAGE_QUEUE_NAME=code-requests
+
+echo $AZURE_LOCATION
+echo $SCENARIO_RG
+
+echo $MAIN_APP_NAME
+echo $THIRD_PARTY_API_APP_NAME
+echo $KEY_VAULT_NAME
+
+echo $MAIN_APP_PLAN_NAME
+echo $MAIN_APP_STORAGE_NAME
+echo $THIRD_PARTY_API_STORAGE_NAME
+
+echo $THIRD_PARTY_API_SECRET_NAME
+echo $THIRD_PARTY_API_SECRET_VALUE
+echo $STORAGE_QUEUE_NAME
+
+##########################################################
+# Step 1: Provision a containing resource group
+az group create \
+--location $AZURE_LOCATION \
+--resource-group $SCENARIO_RG
+#########################################################
+
+##########################################################
+# Deploy the third-party API to Azure Functions
+# Step 2: Create needed resources
+# Create storage account
+az storage account create \
+--name $THIRD_PARTY_API_STORAGE_NAME \
+--location $AZURE_LOCATION \
+--resource-group $SCENARIO_RG \
+--sku Standard_LRS
+# Create empty Azure Function
+az functionapp create \
+--resource-group $SCENARIO_RG \
+--os-type Linux \
+--consumption-plan-location $AZURE_LOCATION \
+--runtime python \
+--runtime-version 3.9 \
+--functions-version 3 \
+--name $THIRD_PARTY_API_APP_NAME \
+--storage-account $THIRD_PARTY_API_STORAGE_NAME
+
+# Publish Azure Function
+cd third_party_api
+
+ Step 3
+# If func does not work
+# https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-
+local?tabs=v4%2Cwindows%2Ccsharp%2Cportal%2Cbash#v2
+func azure functionapp publish $THIRD_PARTY_API_APP_NAM

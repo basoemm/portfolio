@@ -1,0 +1,18 @@
+[[pages]]
+path = "app.py"
+name = "Home"
+
+[[pages]]
+path = "pages/model.py"
+name = "Voorspellingen"
+
+[[pages]]
+path = "pages/insights.py"
+name = "Data inzichten leidingen"
+
+[[pages]]
+path = "pages/breakages.py"
+name = "Data inzichten lekkages"
+
+
+

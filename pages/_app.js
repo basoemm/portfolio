@@ -1,11 +1,10 @@
-import '../styles/main.css'
-import Navbar from '../components/Navbar'
+import "../styles/main.css";
+import Navbar from "../components/Navbar";
 
-export default function App({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Navbar />
       <Component {...pageProps} />
     </>
-  )
+  );
 }
