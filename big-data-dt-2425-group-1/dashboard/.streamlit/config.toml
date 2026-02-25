@@ -1,9 +1,0 @@
-[theme]
-primaryColor = "#006FA2"
-backgroundColor = "#ffffff"
-secondaryBackgroundColor = "#e0f7ff"
-textColor = "#000000"
-
-
-[logger]
-level = "critical"
