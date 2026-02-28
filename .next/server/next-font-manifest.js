@@ -1,1 +1,0 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/ibti/portfolio/app/layout\":[\"static/media/801c1a91216307df-s.p.woff2\",\"static/media/2594c4e8c1a54659-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"

@@ -1,1 +1,6 @@
 node_modules
+
+.next/
+.idea/
+.DS_Store
+tsconfig.tsbuildinfo
