@@ -1,6 +1,6 @@
 // Scroll animation configuration
+// Section heights are defined in LaptopHero via Tailwind: h-screen md:h-[220vh]
 export const SCROLL = {
-  SECTION_HEIGHT: '220vh',
   LAPTOP_SCALE: [1, 2.8] as [number, number],
   TEXT_FADE_RANGE: [0, 0.3] as [number, number],
   TEXT_Y_RANGE: [0, -40] as [number, number],

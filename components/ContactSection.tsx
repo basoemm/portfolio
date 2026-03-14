@@ -1,24 +1,30 @@
 'use client'
 
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { fadeUp, stagger } from '@/lib/animations'
 
 export default function ContactSection() {
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
-
   return (
-    <section id="contact" className="py-40 px-6 bg-kilimanjaro" ref={ref}>
-      <div className="max-w-4xl mx-auto text-center">
+    <section id="contact" className="relative py-44 px-6 z-[20] overflow-hidden">
+      {/* Portal gate glow at bottom */}
+      <div
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse at 50% 100%, rgba(200, 112, 80, 0.35) 0%, rgba(138, 48, 96, 0.15) 45%, transparent 70%)',
+          filter: 'blur(10px)',
+        }}
+      />
+
+      <div className="max-w-4xl mx-auto text-center relative">
         <motion.div
           variants={stagger}
           initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
         >
           <motion.p
             variants={fadeUp}
-            className="text-xs font-medium tracking-[0.18em] text-semolina uppercase mb-6"
+            className="text-xs font-medium tracking-[0.22em] text-semolina uppercase mb-6"
           >
             Get in touch
           </motion.p>
@@ -32,7 +38,7 @@ export default function ContactSection() {
 
           <motion.p
             variants={fadeUp}
-            className="text-warrior/70 mb-12 max-w-sm mx-auto leading-relaxed"
+            className="text-cotton-field/45 mb-14 max-w-sm mx-auto leading-relaxed"
           >
             Open to new opportunities, collaborations, and interesting conversations.
           </motion.p>
@@ -45,13 +51,14 @@ export default function ContactSection() {
               href="https://www.linkedin.com/in/ibtisam-mahamed-83096628b"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-semolina text-kilimanjaro font-medium rounded-full hover:bg-semolina/85 transition-colors duration-200"
+              className="px-8 py-4 bg-semolina text-portal font-medium rounded-full hover:bg-semolina/80 transition-colors duration-200"
             >
               LinkedIn
             </a>
             <a
               href="mailto:hello@ibtisam.cloud"
-              className="px-8 py-4 border border-cotton-field/20 text-cotton-field rounded-full hover:bg-cotton-field/8 transition-colors duration-200"
+              className="px-8 py-4 text-cotton-field rounded-full hover:bg-cotton-field/6 transition-colors duration-200"
+              style={{ border: '1px solid rgba(244, 239, 232, 0.18)' }}
             >
               Send Email
             </a>

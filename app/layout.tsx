@@ -44,7 +44,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="bg-cotton-field text-kilimanjaro font-sans antialiased overflow-x-hidden">
+      <body className="bg-portal text-cotton-field font-sans antialiased overflow-x-hidden">
         <Navbar />
         {children}
       </body>
